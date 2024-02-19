@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Vercel套阿里云CDN实现全站加速</title>
+      <link href="/2024/02/05/2024-01-28-Vercel%E5%A5%97%E9%98%BF%E9%87%8C%E4%BA%91CDN%E5%AE%9E%E7%8E%B0%E5%85%A8%E7%AB%99%E5%8A%A0%E9%80%9F/"/>
+      <url>/2024/02/05/2024-01-28-Vercel%E5%A5%97%E9%98%BF%E9%87%8C%E4%BA%91CDN%E5%AE%9E%E7%8E%B0%E5%85%A8%E7%AB%99%E5%8A%A0%E9%80%9F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，Vercel能免费托管并且全球加速我们的网站，虽然在国外某些国家可以达到1ms秒开，但是在国内的访问速度懂得都懂，有时候速度快，有时候直接卡在加载页面，让人火冒三丈。嗯…只能它说可以用。</p><p>今天看到一个大佬的文章，跟着操作成功实现了Vercel的cdn套阿里的cdn，不得不佩服这位大佬，让我领悟到只要能想到，就没有做不到的，本篇文章记录了实现的过程。</p><h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><h3 id="添加前测速"><a href="#添加前测速" class="headerlink" title="添加前测速"></a>添加前测速</h3><p><img src="/./../images/pages/image-20240205144202676-1707134073969-1.png" alt="image-20240205144202676-1707134073969-1"></p><h3 id="添加后测速"><a href="#添加后测速" class="headerlink" title="添加后测速"></a>添加后测速</h3><p><img src="/./../images/pages/image-20240205185926567.png" alt="image-20240205185926567"></p><h2 id="详细教程"><a href="#详细教程" class="headerlink" title="详细教程"></a>详细教程</h2><p>首先Vercel里面的设置不需要动，如下图所示，推荐设置watech.top为308永久定向指向 <a href="http://www.watech.top/">www.watech.top</a> ，<strong>我们需要在阿里云加速的域名也是 <a href="http://www.watech.top/">www.watech.top</a></strong> ，如下图所示。</p><p><img src="/./../images/pages/image-20240205191336156.png" alt="image-20240205191336156"></p><p>之后在阿里云的全站加速中添加 <a href="http://www.watech.top/">www.watech.top</a> 域名，设置CNAME，（具体配置下面会讲）如下图所示：</p><p><img src="/./../images/pages/image-20240205192030615.png" alt="image-20240205192030615"></p><p>新增源站，源站域名填写cname.vercel.com或者cname-china.vercel.com，然后下面选择443端口。</p><p><img src="/./../images/pages/image-20240205192131229.png" alt="image-20240205192131229"></p><p>回源Host填写加速域名</p><p><img src="/./../images/pages/image-20240205192317502.png" alt="image-20240205192317502"></p><p>最后配置一下ssl证书就ok了，如下图所示</p><p><img src="/./../images/pages/image-20240205192433899.png" alt="image-20240205192433899"></p><h2 id="原理剖析"><a href="#原理剖析" class="headerlink" title="原理剖析"></a>原理剖析</h2><p><img src="/./../images/pages/rt5.jpg" alt="rt5"></p><h2 id="修正"><a href="#修正" class="headerlink" title="修正"></a>修正</h2><p>&emsp; &emsp; 次日发现偶尔还是会卡顿，尤其是在夜间，流量的高峰期；ping了网站之后，仔细看了下，有大概才3成的国内CDN节点，7成的都是Vercel位于美国的节点，加速了，但效果不佳！一番苦找，恍然大悟，CDN1和CDN2共同指向了Vercel的cname地址，导致了两个CDN和用户抢分发节点加速！</p><p>&emsp; &emsp; 究极解决办法：停用加速域名  <a href="http://www.watech.top/">www.watech.top</a>   的cname解析，再ping一次，此时CDN全部变为国内~（个人理解：加速域名回源到了加速域名的cname解析地址，就相当于CDN1为加速域名进行了Vercel官方的cname解析）</p><p>&emsp; &emsp; 此外，发现使用jsdeliver加速的图片资源，显示加载非常慢，如同龟速，上传到github后直接引用链接，恢复正常。这让我想起来一句话，cdn套cdn可能会让你的网站速度变得越来越慢……</p><p>&emsp; &emsp; 最后QQ、微信、各大浏览器打开本站秒开啦~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2024最新Hexo＋butterfly添加和风天气插件</title>
+      <link href="/2024/01/28/2024%E6%9C%80%E6%96%B0Hexo%EF%BC%8Bbutterfly%E6%B7%BB%E5%8A%A0%E5%92%8C%E9%A3%8E%E5%A4%A9%E6%B0%94%E6%8F%92%E4%BB%B6/"/>
+      <url>/2024/01/28/2024%E6%9C%80%E6%96%B0Hexo%EF%BC%8Bbutterfly%E6%B7%BB%E5%8A%A0%E5%92%8C%E9%A3%8E%E5%A4%A9%E6%B0%94%E6%8F%92%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看到网上有很多butterfly主题添加天气插件的教程，不过都是老版本了，最新版本的butterfly主题代码相比之前有很多的改动，再加上添加插件的过程因为一些小问题导致添加不成功，所以本人决定将出一个最新的保姆级教程。本篇文章记录将介绍【hexo：7.0.0 butterfly：4.12.0】版本添加天气插件的教程以及过程中可能出现的问题。</p><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p><img src="/./../images/pages/c1.png" alt="c1"></p><p><img src="/./../images/pages/c2.png" alt="c2"></p><h2 id="详细教程"><a href="#详细教程" class="headerlink" title="详细教程"></a>详细教程</h2><p>1.打开和风天气创建天气<a href="https://widget.qweather.com/create-simple?token=b737d157078546a4a5031ec1f8cce6a1&lang=zh">链接</a>（没有注册账号的要先注册账号，登录之后再进链接，刷新一下就可以创建了）</p><p><img src="/./../images/pages/c3.png" alt="c3"></p><p>这里名称随意，除了底部的固定在浏览器中选择<strong>否</strong>，其他参数你可以随意配置，个人建议天气图标小2个像素，背景透明，两个水平居中。（后面生成后你可以根据实际微调）一键生成代码。</p><p><img src="/./../images/pages/c4.png" alt="c4"></p><p>2.打开你的博客目录-themes-butterfly-source-js中创建一个weather.js文件，将上面红色框内的代码粘贴进去，注意对齐。</p><p><img src="/./../images/pages/c5.png" alt="c5"></p><p>3.在主题配置的文件<code>_config.butterfly.yml</code>中找到<code>inject</code>的<code>bottom</code>处引入下面两个JS文件,其实就是一个插件样式和一个调用官方的接口。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">- <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/js/weather.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure><p><img src="/./../images/pages/c6.png" alt="c6"></p><p><strong>注意对齐</strong></p><p>4.打开你的博客目录-themes-butterfly-layout-header-nav.pug，将#he-plugin-simple粘贴进去，注意对齐上面的span标签。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#he-plugin-simple</span></span><br></pre></td></tr></table></figure><p><img src="/./../images/pages/c7.png" alt="c7"></p><p><strong>sty和其他不用改。</strong></p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>保存，hexo c &amp;&amp; hexo g &amp;&amp; hexo s就能看到效果，可以在weather.js微调一下位置和样式，满意的话hexo d</p><h2 id="可能存在的问题"><a href="#可能存在的问题" class="headerlink" title="可能存在的问题"></a>可能存在的问题</h2><h3 id="修改主题样式上传博客后没有任何变化？"><a href="#修改主题样式上传博客后没有任何变化？" class="headerlink" title="修改主题样式上传博客后没有任何变化？"></a>修改主题样式上传博客后没有任何变化？</h3><p>解决办法:</p><p>①到你的butterfly主题文件夹，把里面的.git文件夹删除即可（你的所有博客文件中只能存在一个.git，就是你的博客主目录的，如果主题中也有.git文件的话，里面的文件是不会上传到github的，非常重要的一点！困扰了作者好几天mmp）</p><p>②检查博客根目录的_config.yml中的deploy，“:”后面要有一个空格。</p><p>③删除博客根目录的.deploy_git文件。（不用担心这个，hexo g会重新生成的）</p><h3 id="远程仓库没有变化？"><a href="#远程仓库没有变化？" class="headerlink" title="远程仓库没有变化？"></a>远程仓库没有变化？</h3><p>解决办法:</p><p>git bash中执行下面代码，一个一个来</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-deployer-git</span><br><span class="line">npm i hexojs/hexo-deployer-git</span><br><span class="line">git rm --cache themes/butterfly（第三条非必要，根据实际情况更改路径或者不执行，意思就是删掉缓存）</span><br></pre></td></tr></table></figure><p>最后记住：如果有问题可以去github上hexo的issues上查找解决办法或者提问<a href="https://github.com/hexojs/hexo/issues">直达链接</a></p><h3 id="完结撒花"><a href="#完结撒花" class="headerlink" title="完结撒花~"></a>完结撒花~</h3><p><img src="/./../images/pages/c8.gif" alt="c8"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>笔记本蓝屏了_(:зゝ∠)_</title>
+      <link href="/2024/01/20/2024-01-21-%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%93%9D%E5%B1%8F%E4%BA%86_(%D0%B7%E3%82%9D%E2%88%A0)_/"/>
+      <url>/2024/01/20/2024-01-21-%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%93%9D%E5%B1%8F%E4%BA%86_(%D0%B7%E3%82%9D%E2%88%A0)_/</url>
+      
+        <content type="html"><![CDATA[<p>&emsp; &emsp; <strong>如果没记错的话，这应该是第二次蓝屏。而且两次的原因都是一样的，听我娓娓道来。</strong><br>&emsp; &emsp; 去年暑假，因为电脑各种软件文档垃圾，所以我在B站上找到了一款呼声比较高的软件，叫做【CClearner】。<br>这个软件不是一般的牛逼，你用什么360，猎豹清理大师，各种垃圾清理的软件啊，都没这一个好使，我敢保证你先用系统自带的软件清理完系统垃圾，再用CClearner，绝对还能清理几个甚至几十个G。<br>&emsp; &emsp; 我清晰的记得这个软件，在我打开它的时候，发现它不只是一个十分简洁、小巧、干净的垃圾清理程序，也是一个电脑驱动程序！二合一，功能十分强大。在我清理完几十个G的垃圾后，我便在软件里对系统进行了驱动检测，然后更新升级，当时以为这个软件靠谱，也是有点大意了吧，我直接随便点了一键更新本电脑所有驱动。然后经过了几个小时的漫长等待……神奇的事情发生了，电脑自动重启后居然蓝屏了，而且我查阅了各种文章、视频，BIOS里面各种各样能试的方法都尝试了，但都无果。<br>&emsp; &emsp; 因为之前多次重装过系统，有一点点这方面的经验，所以当天下午我直接去了我们当地的网吧，虽然是夏天，但网吧里有空调很凉快~ 5块钱一个小时，我把U盘做成了启动盘（微PE)，顺便安了一个LTSC的极简版系统，有备无患。然后打了几把英雄联盟，可以最后一把刚到一半，就被老板娘停机了。<br>&emsp; &emsp; 回家之后，插上U盘，进入了启动盘的XP系统，进行了引导修复，然后就成功启动了！但键盘和触摸板驱动掉了，所以没法使用，但我用鼠标调出了软键盘，回滚了这两个驱动，然后就可以正常使用了。<br>&emsp; &emsp; 今天电脑又蓝屏了，玛德可能是今天吃席吃迷糊了，我又在一个叫做Driver booster的软件更新了部分驱动，结果可想而知。又蓝屏了，但和上次不一样，这次可能很大概率涉及到了核显系统的核心驱动，直接就gg了。使用U盘里的各种工具对系统C盘进行了引导修复，不成功，又尝试了很多办法引导修复，但都不成功。于是我转变了思路，对驱动进行回滚，最终不负众望，也多亏了惠普电脑和系统的健壮性，最后在一个不起眼的位置发现并调用了系统自带的工具，对前一个时间点（五天前左右)的驱动进行了回滚。<br>&emsp; &emsp; 就这样重启后，问题再次完美解决！随后我使用对所有驱动更新了稳定的版本，并且将重要的核显、键盘、触摸板等保留了旧版本。希望以后不会再也不会出现这种问题了。</p><p><img src="/./../images/pages/ff3.jpg" alt="ff3"></p><p><img src="/./../images/pages/ff4.jpg" alt="ff4"></p><p><img src="/./../images/pages/ff5.jpg" alt="ff5"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电脑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>专业课笔记1月12日</title>
+      <link href="/2024/01/12/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%8812%E6%97%A5/"/>
+      <url>/2024/01/12/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%8812%E6%97%A5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>从键盘输入10个整数，求出这10个整数的最大值和最小值，并将其输出。要求：将输入的10个整数先存入数组a中，然后再求最大值max和最小值min。【2019年真题】</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">   <span class="type">int</span> a[<span class="number">10</span>],max,min,i;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">     <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line">   &#125;    <span class="comment">//写程序时，输入语法写完结束，另起一行写其他内容！！！</span></span><br><span class="line">   max=min=a[<span class="number">0</span>];  </span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;  </span><br><span class="line">     <span class="keyword">if</span>(max&lt;a[i])</span><br><span class="line">       max=a[i];</span><br><span class="line">     <span class="keyword">if</span>(min&gt;a[i])</span><br><span class="line">       min=a[i];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;最大值为%d,最小值为%d&quot;</span>,max,min);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><hr><p>求200以内（不包含200）能被7或11整除的所有奇数的个数，并求出所有偶数的和并输出符合要求的奇数的个数和偶数的和。【2020年真题】</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">   <span class="type">int</span> count=<span class="number">0</span>,i,sum=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">200</span>;i++)</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="keyword">if</span>(i%<span class="number">7</span>==<span class="number">0</span> || i%<span class="number">11</span>==<span class="number">0</span>)</span><br><span class="line">     &#123;</span><br><span class="line">       <span class="keyword">if</span>(i%<span class="number">2</span>)</span><br><span class="line">         count++;  </span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">       sum+=i;</span><br><span class="line">   &#125;</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;奇数的个数为%d,偶数的和为%d&quot;</span>,count,sum);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><hr><p>阿姆斯特朗数也就是俗称的水仙花数，是指一个三位数，其各位数字的立方和等于该数本身。例如：153&#x3D;1^3+5^3+3^3，所以153就是一个水仙花数。求出所有的水仙花数。【2021年真题】</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">   <span class="type">int</span> i,a,b,c;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">100</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">     a=i%<span class="number">10</span>;</span><br><span class="line">     b=i/<span class="number">10</span>%<span class="number">10</span>;</span><br><span class="line">     c=i/<span class="number">100</span>;</span><br><span class="line">     <span class="keyword">if</span>(a*a*a+b*b*b+c*c*c==i)&#123;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,i);</span><br><span class="line">       <span class="comment">//TODO</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><hr><p>利用一维数组求Fibonacci数列的前20项。数列中第一项和第二项均为1，其余各项为其相邻的前两项的和。按照每行四项，输出显示结果。【2022年真题】</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">   <span class="type">int</span> f[<span class="number">20</span>]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;,i;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">     <span class="comment">//TODO</span></span><br><span class="line">     f[i]=f[i<span class="number">-2</span>]+f[i<span class="number">-1</span>];</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)</span><br><span class="line">   &#123;</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; i%<span class="number">4</span>==<span class="number">0</span>)&#123;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">       <span class="comment">//TODO</span></span><br><span class="line">     &#125;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,f[i]);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><hr><p>数组a中存放着10名同学《C语言程序设计》的成绩，请编写程序对它们按由大到小的顺序排列并输出排序后的结果。<br>int a[10]&#x3D;{70,68,61,77,79,80,82,65,73,93}；【2023年真题】- 冒泡排序</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">   <span class="type">int</span> a[<span class="number">10</span>] = &#123;<span class="number">70</span>, <span class="number">68</span>, <span class="number">61</span>, <span class="number">77</span>, <span class="number">79</span>, <span class="number">80</span>, <span class="number">82</span>, <span class="number">65</span>, <span class="number">73</span>, <span class="number">93</span>&#125;;</span><br><span class="line">   <span class="type">int</span> i,j,t;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">9</span>;i++)</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">10</span><span class="number">-1</span>-i;j++)&#123;</span><br><span class="line">       <span class="comment">//TODO</span></span><br><span class="line">       <span class="keyword">if</span>(a[j]&lt;a[j+<span class="number">1</span>])</span><br><span class="line">       &#123;</span><br><span class="line">         t=a[j];</span><br><span class="line">         a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">         a[j+<span class="number">1</span>]=t;</span><br><span class="line">         <span class="comment">//TODO</span></span><br><span class="line">       &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) </span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[i]);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><h2 id="Fighting"><a href="#Fighting" class="headerlink" title="Fighting!"></a>Fighting!</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>专业课笔记1月11日</title>
+      <link href="/2024/01/11/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%8811%E6%97%A5/"/>
+      <url>/2024/01/11/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%8811%E6%97%A5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h3><p>lettuce生菜<br>prettiest漂亮的，精致的<br>crawl爬<br>endurance耐力<br>striking惊人的<br>massive大量的，大规模的<br>cycle循环<br>radically彻底地<br>heal治愈<br>infect传染</p><hr><h3 id="串处理函数"><a href="#串处理函数" class="headerlink" title="串处理函数"></a>串处理函数</h3><p>strcpy<br>strlen   不加\0<br>strcmp<br>strcat   第二个字符串接到第一个字符串后</p><p>若函数定义时省略数据类型，则默认为<u>整型（int）</u></p><p>一个函数在函数体内调用其自身成为<u>递归</u>调用。</p><p>用数组元素作为实参时，向形参变量传递的是<u>数组元素值</u>。而用数组名作为函数实参时，向形参（数组名或指针变量）传递的是<u>数组的首地址</u>。</p><p>一个变量的地址称为该变量的<u>指针</u>。</p><hr><h3 id="杨辉三角-必背"><a href="#杨辉三角-必背" class="headerlink" title="杨辉三角(必背)"></a>杨辉三角(必背)</h3><p><img src="/./../images/pages/yhsj.jpg" alt="yhsj"></p><hr><p><strong>做看程序写结果题目时，仔细快速写一遍，然后按照解题思路审查一遍，一定要规避低级错误！！！</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 英语 </tag>
+            
+            <tag> C语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>专业课笔记1月10日</title>
+      <link href="/2024/01/10/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%8810%E6%97%A5/"/>
+      <url>/2024/01/10/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%8810%E6%97%A5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="今日任务"><a href="#今日任务" class="headerlink" title="今日任务"></a>今日任务</h2><ul><li><input checked="" disabled="" type="checkbox"> C语言填空真题</li><li><input checked="" disabled="" type="checkbox"> 英语网课测试</li><li><input checked="" disabled="" type="checkbox"> 整理资料，规划</li></ul><p><strong>从此文章开始增大行间距以便于阅读</strong></p><hr><p>表达式x&amp;&amp;1等价于x!&#x3D;0<br>x&amp;&amp;1:<br>x&#x3D;0时表达式为0<br>x≠0时表达式为1<br>代入x!&#x3D;0，完美匹配</p><p><strong>C语言中，else语句必须与if语句配对使用，else语句不能单独使用</strong></p><p><strong>C语言中，<u>全局变量</u>若不赋初值，则它的初值为随机数。 <u>×</u></strong></p><p>全局变量为静态变量，初值为0。</p><p><strong>C语言中，静态变量若不赋初值，则它的初值为0。</strong></p><p><strong>在一个函数中定义的局部静态变量不能被另一个函数调用。</strong></p><p>typedef是在计算机编程<em>语言</em>中用来为复杂的声明定义简单的别名，并不会定义新的数据类型</p><p><strong>C语言支持两种形式的数据流：文本数据流和二进制数据流。</strong></p><p><strong>C语言中，只有在输出时%.几f这种情况才四舍五入，其余情况直接<u>舍小数位</u>。</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;%X&quot;</span>,<span class="number">012</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><p>上面的程序运行结果是 <code>A</code>。</p><p>这是因为在 <code>printf</code> 函数中， <code>%X</code> 是一个格式化输出控制符，用于将整数以十六进制形式打印出来。而 <code>012</code> 是一个八进制数，表示十进制的 10。<br>当我们使用 <code>%X</code> 格式化输出控制符时，它会将整数以大写字母的十六进制形式打印出来。对应到十六进制，数字 10 表示为字母 ‘A’。          <strong>%X对应大写，%x对应小写</strong>**</p><hr><p><code>strlen()</code> 函数用于计算字符串的长度，即字符串中字符的个数。它不包括字符串末尾的空字符 <code>&#39;\0&#39;</code>。</p><p>在C语言中，字符串是以字符数组的形式表示的，最后一个字符必须是空字符 <code>&#39;\0&#39;</code> 来标识字符串的结束。<br>当我们使用 <code>strlen()</code> 函数时，它会从字符串的开头开始遍历，直到遇到第一个空字符 <code>&#39;\0&#39;</code> 为止，并返回此前遍历过的字符数量作为字符串的长度。<br><strong>因此，<code>strlen()</code> <u>不会</u>将空字符 <code>&#39;\0&#39;</code> 计入字符串的长度。</strong></p><p>在C语言中，字符串是以字符数组的形式表示的，并且必须以空字符 <code>&#39;\0&#39;</code> 结尾。这个空字符用于标识字符串的结束。<br>当我们使用一些特定的函数或者操作时，可能会包括空字符 <code>&#39;\0&#39;</code>。<br>例如，在以下情况下，字符串长度计算会包括空字符 <code>&#39;\0&#39;</code>：</p><p><strong>1.使用 <code>sizeof</code> 运算符：<code>sizeof</code> 运算符返回的是整个数组的大小，包括空字符。</strong></p>   <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> str[] = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="type">int</span> length = <span class="keyword">sizeof</span>(str);  <span class="comment">// 包括空字符，length 的值为 6</span></span><br></pre></td></tr></table></figure><p><strong>2.使用 <code>%s</code> 格式化输出控制符：<code>%s</code> 用于打印字符串，它会一直打印到遇到空字符为止。一旦遇到空字符，输出就会停止。这意味着 <code>%s</code> 不会将空字符 <code>&#39;\0&#39;</code> 输出到屏幕上，只会输出空字符之前的所有字符。</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> str[] = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, str);  <span class="comment">// 输出 Hello，不包括空字符</span></span><br></pre></td></tr></table></figure><hr><p><strong>意思都是：一……就……</strong><br>从两件事间隔的时间看，as soon as 最长，”A事发生后，就做B事”；<br>no sooner…than 次之，”刚做完A事，就做B事”；<br>hardly…when最短，”几乎未来得及做完A事，紧接着就做B事”。<br>at the cost of  以…为代价<br>instead of而不是<br>pause暂停<br>as if好像…一样<br>flat公寓<br>figure   v认为，计算，是…部分<br>sufficient足够的<br>on contrary相反的<br>wounded受伤的<br>trail  n小路，路径，痕迹   v跟踪<br>criticism批评      self-criticism自我批评<br>in that因为<br>Now that既然，由于<br>hesitate犹豫<br>associate with与…交往，联系<br>pronunciation读音，发音<br>party排队，聚会，政党<br><strong>draw a conclution得出结论</strong><br>otherwise否则<br>theatre剧院<br>on time准时      in time及时<br>despite of不管<br>immigrant移民<br>prize   n奖金   v高度重视</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 英语 </tag>
+            
+            <tag> C语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>专业课笔记1月9日</title>
+      <link href="/2024/01/09/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%889%E6%97%A5/"/>
+      <url>/2024/01/09/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%AC%94%E8%AE%B01%E6%9C%889%E6%97%A5/</url>
+      
+        <content type="html"><![CDATA[<p>scanf(“%f%f”,&amp;a,&amp;b);<br>输入的三种格式为：<br>11空格22      11回车22         11tab22</p><p>执行语句int a&#x3D;1,b&#x3D;2,c&#x3D;3;if(a&#x3D;c) b++;else b–;后，变量b的值为( <strong>A</strong> )【2022年真题】<br>A.3   B.2   C.1   D.不确定<br><strong>解析：</strong><u>if(a&#x3D;c)</u>只是赋值，不用比较大小。本题是将c的值赋值给a，<u>if执行完毕不执行else(固定语法！)</u></p><p>double型变量在输入时<strong>只能用%lf</strong>      输出时<strong>可以使用%lf或者%f</strong></p><p>switch(整型&#x2F;字符型)</p><p><strong>判断初始化<u>字符</u>(串)数组语句的对错</strong></p><ol><li>放没放多</li><li><u>数组名不能放等号&#x3D;左边</u></li><li>有没有{ }       “ “可以没有{}   ‘ ‘必须加{}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char str[5]=&quot;hello&quot;; × 放多了</span><br><span class="line">char str[]=&#123;&#x27;h&#x27;,&#x27;b&#x27;&#125;; √</span><br><span class="line">char str[5]=&#123;&quot;hi&quot;&#125;; √</span><br><span class="line">char str[]=&#x27;0&#x27;; ×</span><br></pre></td></tr></table></figure></li></ol><p>数组的下标可以是：整型常量、整型表达式、（基型变量）</p><p>char str[10]&#x3D;”jilin”;有多少个<strong>元素</strong>？<br>sb别查了，总共10个，6＋4（未被初始化元素值默认为0）<br><strong>长度</strong>是多少？6</p><p>将数组名作为函数调用的实参，传递给形参的是<u>数组的首地址</u></p><p>int n&#x3D;5,a[n];  ×    <u>定义时不能是变量</u>，但引用时可以！  </p><p>表达式strcmp(“China”,”china”)的值是一个<strong>负整数</strong>   比的是ASCII值 <em>c99 C67</em></p><p>函数的定义不能嵌套，函数的调用可以嵌套</p><p>大部分情况下：实参与其对应的形参在函数调用时各占独立的存储单元。</p><p>指针变量等号&#x3D;右边不能放整数     int *p; p&#x3D;200;   ×</p><p> char s[]&#x3D;”012M356”，p&#x3D;s   表达字符M的表达式有：*(p+3)   <strong>s[3]&#x3D;*(s+3)</strong><br>*p+3&#x3D;’0’+3&#x3D;48+3&#x3D;51   也等于’0’+’3’&#x3D;’3’</p><p>int a&#x3D;0; *q; *q&#x3D;a; 此时的q没有指向，是一个野指针，里面有一个随机值，运行时会报错。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct stu</span><br><span class="line">&#123;</span><br><span class="line">int a;</span><br><span class="line">float b; </span><br><span class="line">&#125;stutype;</span><br></pre></td></tr></table></figure><p>牢记：<br>struct是结构体类型的关键字<br>struct stu是用户定义的结构体类型<br>stutype是用户定义的结构体变量名<br>a和b是结构体成员</p><p>C语言共用体类型变量在程序运行期间<u>只有一个成员驻留在内存中</u>。</p><p>c是大小写敏感语言。</p><p>c语言中，注释部分可以出现在程序中任意位置。</p><p>编辑.c→编译.obj→连接.exe→运行</p><p>C语言主函数可以放在任意位置。</p><p>C语言中整数常量的表示形式有十进制、八进制、十六进制。没有二进制！<strong>二进制是存储形式</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2024/01/05/hello-world/"/>
+      <url>/2024/01/05/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
