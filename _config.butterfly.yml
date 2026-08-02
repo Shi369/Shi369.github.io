@@ -220,7 +220,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: Mr.Shi 的个人博客，分享生活与技术
+    description: 水车的个人博客，分享生活与技术
     button:
       enable: true
       icon: fab fa-github
