@@ -28,8 +28,6 @@ code_word_wrap: false
 # formal:
 #   icon: link || the description || color
 social:
-  fab fa-github: https://github.com/Shi369 || Github || '#24292e'
-  fas fa-envelope: mailto:rk1413686404@gmail.com || Email || '#4a7dbe'
 
 # Image (圖片設置)
 # --------------------------------------
@@ -201,11 +199,11 @@ noticeOutdate:
 # --------------------------------------
 footer:
   owner:
-    enable: true
+    enable: false
     since: 2024
   custom_text: |-
     <a target="_blank" href="https://hexo.io/"><img src="https://img.watech.top/blog/202402182251635.svg" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.watech.top/blog/202402182251636.svg" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.watech.top/blog/202402191336666.svg" title="本站使用JsDelivr为静态资源提供CDN加速"></a>&nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.watech.top/blog/202402182251638.svg" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.watech.top/blog/202402182251640.svg" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.watech.top/blog/202402182251641.svg" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="https://beian.miit.gov.cn/"><img src="https://img.watech.top/blog/202402182251642.svg" title="【水车生活share】备案信息：豫ICP备2024041163号"></a>
-  copyright: true # Copyright of theme and framework
+  copyright: false # Copyright of theme and framework
 
 # aside (側邊欄)
 # --------------------------------------
