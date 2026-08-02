@@ -1,6 +1,8 @@
 ---
 title: Hello World
 date: 2024-01-05 13:00:00
+updated: 2024-01-05 13:00:00
+cover: https://img.watech.top/blog/202402182245937.webp
 tags:
 categories:
 ---

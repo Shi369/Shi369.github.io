@@ -1,6 +1,8 @@
 ---
 title: 2024最新Hexo＋butterfly添加和风天气插件
 date: 2024-01-28 13:00:00
+updated: 2024-01-28 13:00:00
+cover: https://img.watech.top/blog/202402182245839.webp
 tags:
   - Hexo
 categories:

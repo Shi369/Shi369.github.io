@@ -1,6 +1,8 @@
 ---
 title: Vercel套阿里云CDN实现全站加速
 date: 2024-02-05 13:00:00
+updated: 2024-02-05 13:00:00
+cover: https://img.watech.top/blog/202402182245156.webp
 tags:
   - Hexo
 categories:
