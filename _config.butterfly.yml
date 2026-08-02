@@ -220,7 +220,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 稳中求进，加油！
+    description: 
     button:
       enable: true
       icon: fab fa-github
