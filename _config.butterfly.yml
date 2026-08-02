@@ -220,7 +220,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 
+    description: 为者常成，行者常至
     button:
       enable: true
       icon: fab fa-github
