@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 测试
+title: 水车生活Share
 subtitle: 
-description: 'Mr.Shi 的个人博客，分享生活与技术'
-keywords: 'hexo,butterfly,blog,水车生活Share'
+description: '水车生活Share是一个个人成长技术博客，专注Hexo博客搭建、前端开发、后端技术学习与日常生活记录，持续分享实战经验与成长感悟，记录平凡且努力的生活。'
+keywords: 'hexo,butterfly博客,前端开发,后端学习,个人博客,技术成长,生活分享'
 author: 时春祥
 language: zh-CN
 timezone: 'Asia/Shanghai'
