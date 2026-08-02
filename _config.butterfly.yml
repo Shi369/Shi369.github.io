@@ -718,9 +718,9 @@ display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
-  enable: false
+  enable: true
   field: post # site/post
-  title-prefix-icon: # '\f0c1'
+  title-prefix-icon: # '\f863'
   title-prefix-icon-color: # '#F47466'
 
 # Global font settings
