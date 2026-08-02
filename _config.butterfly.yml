@@ -909,7 +909,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/js/custom.css">
-
+    - <meta name="baidu-site-verification" content="codeva-AZrOe5bOGg" />
     # 和风天气插件样式
     # - <link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple-common.css">
   bottom:
