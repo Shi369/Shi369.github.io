@@ -230,7 +230,7 @@ aside:
     enable: true
     content: |
       <left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很喜欢《从你的全世界路过》里面的一句话：虾子要吃活着烧的，痛出来的鲜美，才足够颠倒众生。爱情、事业、生活皆是如此。</left>
-      <center>本站域名<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.watech.top/"><b><font color="#5ea6e5">watech.top</font></b></a><br>📬：<b><font color="#a591e0">rk1413686404@gmail.com</font></b></a></center>
+      <center>本站域名：<a href="https://www.watech.top/"><b><font color="#5ea6e5">watech.top</font></b></a><br>联系方式：<b><font color="#a591e0">rk1413686404@gmail.com</font></b></a></center>
   card_recent_post:
     enable: false
     limit: 5 # if set 0 will show all
