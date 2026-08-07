@@ -4,7 +4,7 @@ date: 2026-08-06 22:15:00
 updated: 2026-08-07 22:15:00
 cover: https://img.watech.top/blog/%E9%9B%B7%E5%A7%86.png
 tags: 网页开发
-categories:  学习
+categories: 学习
 ---
 # 第一天2026.8.6
 了解HTML5标签，包括文字排版、图片、链接、音视频
