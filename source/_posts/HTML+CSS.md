@@ -21,3 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 ```
 该用法只需要记得在Dom加载完后执行Script即可查到
+# 第三天2026.8.8
+今天学习开始有点吃力了，难度增大，内容变多。  
+主要内容是CSS选择器和样式的学习，通过Emmet提高编程效率。
+了解了盒子模型（块级元素、行内元素特点与区别）
