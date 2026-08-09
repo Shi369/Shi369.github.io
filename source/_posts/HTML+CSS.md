@@ -12,6 +12,7 @@ categories: 学习
 1. 掌握列表、表格、表单制作方法  
 2. 掌握CSS用法，包括选择器和文字控制属性  
 总结：代码不必死记，核心是你知道用法和逻辑，想不起来具体代码及时查资料即可，比如：  
+
 ```Javascript
 <script>
 document.addEventListener('DOMContentLoaded', function(){
