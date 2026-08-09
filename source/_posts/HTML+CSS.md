@@ -30,3 +30,4 @@ document.addEventListener('DOMContentLoaded', function(){
 1. pxcook像素大厨：前端开发标注工具，切图工具。
 2. 对盒子模型知识进行巩固，跟着方案实操
 3. 难度继续增长，理论的学习、实践花费时间增多，代码量变大
+==坚持就是胜利==
