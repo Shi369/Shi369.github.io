@@ -38,4 +38,5 @@ document.addEventListener('DOMContentLoaded', function(){
 **每天一遍**  
 [CSS–Flex布局](https://b23.tv/tijzG7q)  
 [CSS–Grid布局](https://b23.tv/FWkmtUf)
-[Flex和Grid的区别🧐](https://b23.tv/ZwGLuYM)
+[Flex和Grid的区别🧐](https://b23.tv/ZwGLuYM)  
+晚上对flex布局进行了重点学习，虽然白天是一头雾水，但现在差不多能初步做出来了，也仅仅只是能做最基本的。下一步增加实践作业，大概看了一眼接下来几天的内容，基本是CSS高级进阶、定位、实战网页制作，感觉没什么难度。早已看穿了一切▼_▼
