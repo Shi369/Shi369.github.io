@@ -6,4 +6,6 @@ type: about
 
 # About
 
-记录生活的点点滴滴！
+<center>二十多岁，励志成为一名全栈工程师！</center>
+<center>📫：rk1413686404@gmail.com</center>
+
