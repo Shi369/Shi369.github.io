@@ -220,14 +220,14 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 水车的个人博客，分享生活与技术
+    description: 春风若有怜花意，可否许我再少年
     button:
       enable: true
       icon: fab fa-github
       text: Github 主页
       link: https://github.com/Shi369
   card_announcement:
-    enable: true
+    enable: false
     content: |
       <center>春风若有怜花意，可否许我再少年</center>
       <center> 📫︎：<b><font color="#a591e0">rk1413686404@gmail.com</font></b></a></center>
