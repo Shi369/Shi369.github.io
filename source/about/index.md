@@ -7,5 +7,6 @@ type: about
 # About
 
 <center>二十多岁，励志成为一名全栈工程师！</center>
+<br>
 <center>📫：rk1413686404@gmail.com</center>
 
