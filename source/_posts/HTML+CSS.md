@@ -2,7 +2,7 @@
 title: 十天学会HTML5+CSS
 date: 2026-08-06 22:15:00
 updated: 2026-08-07 22:15:00
-cover: https://img.watech.top/blog/%E9%9B%B7%E5%A7%86.png
+cover: https://img.watech.top/blog/8.6.jpg
 tags: 网页开发
 categories: 学习
 ---
