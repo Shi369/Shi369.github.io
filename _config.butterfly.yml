@@ -908,7 +908,6 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <meta name='description' content='水车生活Share是一个个人成长技术博客，专注Hexo博客搭建、前端开发、后端技术学习与日常生活记录，持续分享实战经验与成长感悟，记录平凡且努力的生活。'>
     - <link rel="stylesheet" href="/js/custom.css">
     - <meta name="baidu-site-verification" content="codeva-AZrOe5bOGg" />
     # 和风天气插件样式
