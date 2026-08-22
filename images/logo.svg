@@ -1,0 +1,11 @@
+<svg width="55" height="25" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="svg_7_blur">
+   <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text style="cursor: move;" filter="url(#svg_7_blur)" stroke-width="0" transform="matrix(2.17233 0 0 2.17233 -22.7206 -19.9049)" stroke="#000" font-style="normal" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Syne'" font-size="7" id="svg_7" y="17.12326" x="13.50807" fill="#ffffff">Home</text>
+ </g>
+</svg>
