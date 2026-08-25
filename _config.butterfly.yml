@@ -908,6 +908,9 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - <meta name="description" content="Mr.Shi 的个人博客，分享生活与技术">
+    - <meta name="keywords" content="hexo,butterfly,blog,水车生活Share">
+
     - <link rel="stylesheet" href="/js/custom.css">
     - <meta name="baidu-site-verification" content="codeva-AZrOe5bOGg" />
     # 和风天气插件样式
