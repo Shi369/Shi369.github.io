@@ -4,167 +4,239 @@ date: 2024-01-06 09:00:00
 type: link
 ---
 
-## 实用工具
+<!-- ========== 友情链接样式 ========== -->
+<style>
+  .flink-wrap {
+    --flink-radius: 14px;
+    --flink-gap: 18px;
+    --flink-card-bg: #ffffff;
+    --flink-card-border: rgba(0, 0, 0, 0.06);
+    --flink-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+    --flink-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --flink-icon-bg: #f7f8fa;
+    --flink-text: #1f2328;
+    --flink-text-desc: #8b949e;
+    --flink-placeholder-color: #c9d1d9;
+  }
 
-简单实用的website
+  /* 深色模式适配（可选，若博客支持 data-theme="dark"） */
+  [data-theme="dark"] .flink-wrap,
+  .flink-wrap[data-theme="dark"] {
+    --flink-card-bg: #1c2128;
+    --flink-card-border: rgba(255, 255, 255, 0.08);
+    --flink-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
+    --flink-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --flink-icon-bg: #2d333b;
+    --flink-text: #e6edf3;
+    --flink-text-desc: #8b949e;
+    --flink-placeholder-color: #484f58;
+  }
 
-<div class="flink-list">
-  <div class="flink-list-item">
-    <a href="https://c.runoob.com/" title="菜鸟工具" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://cdn.jsdelivr.net/gh/RK1413686404/ImageShare-X/202401201015956.ico" alt="菜鸟工具" />
-      </div>
-      <div class="flink-item-name">菜鸟工具</div>
-      <div class="flink-item-desc" title="开发设计人员工具库">开发设计人员工具库</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://catocr.com/" title="CatOCR" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://catocr.com/img/icons/favicon-32x32.png" alt="CatOCR" />
-      </div>
-      <div class="flink-item-name">CatOCR</div>
-      <div class="flink-item-desc" title="免费在线图片转文字">免费在线图片转文字</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://www.ilovepdf.com/zh-cn/" title="I ❤ PDF" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://www.ilovepdf.com/img/ilovepdf.svg" alt="I ❤ PDF" />
-      </div>
-      <div class="flink-item-name">I ❤ PDF</div>
-      <div class="flink-item-desc" title="完全免费、易于使用、丰富的PDF处理工具">完全免费、易于使用、丰富的PDF处理工具</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://zhouql.vip/bilibili/" title="B站下载" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://zhouql.vip/bilibili/favicon.ico" alt="B站下载" />
-      </div>
-      <div class="flink-item-name">B站下载</div>
-      <div class="flink-item-desc" title="b站视频下载工具，免费极简方便">b站视频下载工具，免费极简方便</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://wormhole.app/" title="wormhole（虫洞）" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://cdn.jsdelivr.net/gh/RK1413686404/ImageShare-X/202401181648186.webp" alt="wormhole（虫洞）" />
-      </div>
-      <div class="flink-item-name">wormhole（虫洞）</div>
-      <div class="flink-item-desc" title="简单，私密的文件分享|24H-5GB">简单，私密的文件分享|24H-5GB</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="http://iizuka.cs.tsukuba.ac.jp/projects/colorization/web/" title="白黒画像の自動色付" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://media.flaticon.com/dist/min/img/favicon.ico" alt="白黒画像の自動色付" />
-      </div>
-      <div class="flink-item-name">白黒画像の自動色付</div>
-      <div class="flink-item-desc" title="使用 AI 自动为黑白图像着色">使用 AI 自动为黑白图像着色</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://itakeo.github.io/wx/" title="集赞不求人" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png" alt="集赞不求人" />
-      </div>
-      <div class="flink-item-name">集赞不求人</div>
-      <div class="flink-item-desc" title="朋友圈集赞200个只需要1分钟">朋友圈集赞200个只需要1分钟</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://dazi.91xjr.com/" title="在线打字练习" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://dazi.91xjr.com/static/web/images/favicon.ico" alt="在线打字练习" />
-      </div>
-      <div class="flink-item-name">在线打字练习</div>
-      <div class="flink-item-desc" title="摆脱二指禅！">摆脱二指禅！</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://chat.forefront.ai/" title="Forefront AI" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://cdn.jsdelivr.net/gh/RK1413686404/ImageShare-X/202401231744555.png" alt="Forefront AI" />
-      </div>
-      <div class="flink-item-name">Forefront AI</div>
-      <div class="flink-item-desc" title="Meet your new AI assistant">Meet your new AI assistant</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://jpgrm.com/" title="AI 魔术橡皮擦" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://jpgrm.com/htdocs/favicon.ico" alt="AI 魔术橡皮擦" />
-      </div>
-      <div class="flink-item-name">AI 魔术橡皮擦</div>
-      <div class="flink-item-desc" title="利用最先进的人工智能帮你处理图片">利用最先进的人工智能帮你处理图片</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://zhale.me/" title="炸了么" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://zhale.me/_nuxt/logo.0766d003.svg" alt="炸了么" />
-      </div>
-      <div class="flink-item-name">炸了么</div>
-      <div class="flink-item-desc" title="网站测速-全球1000+网络拨测节点">网站测速-全球1000+网络拨测节点</div>
-    </a>
-  </div>
-</div>
+  .flink-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--flink-gap);
+    margin: 0 0 32px 0;
+    padding: 0;
+    list-style: none;
+  }
 
-## 娱乐
+  .flink-list-item {
+    margin: 0;
+  }
 
-生活不止苟且，还有诗和远方
+  .flink-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: var(--flink-radius);
+    background: var(--flink-card-bg);
+    border: 1px solid var(--flink-card-border);
+    box-shadow: var(--flink-card-shadow);
+    text-decoration: none;
+    color: var(--flink-text);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
 
-<div class="flink-list">
-  <div class="flink-list-item">
-    <a href="https://www.acgvod.com/" title="ACG动漫网" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://www.acgvod.com/template/vfed/asset/img/favicon.png" alt="ACG动漫网" />
-      </div>
-      <div class="flink-item-name">ACG动漫网</div>
-      <div class="flink-item-desc" title="ACG免费动漫在线观看">ACG免费动漫在线观看</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://ymck.pro/" title="影猫の仓库" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://ymck.pro/upload/site/20230825-1/5c00fbcfb4ff0737d3c8320d30b2d1de.png" alt="影猫の仓库" />
-      </div>
-      <div class="flink-item-name">影猫の仓库</div>
-      <div class="flink-item-desc" title="免费观影第一站！">免费观影第一站！</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://xingye.me/game/" title="摸鱼小游戏~" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://xingye.me/game/lifeRestart/images/icons/icon-72x72.png" alt="摸鱼小游戏~" />
-      </div>
-      <div class="flink-item-name">摸鱼小游戏~</div>
-      <div class="flink-item-desc" title="小游戏平台">小游戏平台</div>
-    </a>
-  </div>
-  <div class="flink-list-item">
-    <a href="https://comradexu.github.io/ForYou/magicmusic/" title="这网站有毒" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://comradexu.github.io/ForYou/magicmusic/images/icon.png" alt="这网站有毒" />
-      </div>
-      <div class="flink-item-name">这网站有毒</div>
-      <div class="flink-item-desc" title="初音未来版本の互动">初音未来版本の互动</div>
-    </a>
-  </div>
-</div>
+  .flink-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--flink-hover-shadow);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
 
-## 友情链接
+  .flink-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--flink-icon-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
 
-一些好朋友~~
+  .flink-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+  }
 
-<div class="flink-list">
-  <div class="flink-list-item">
-    <a href="https://fomal.cc/" title="Fomalhaut🥝" target="_blank">
-      <div class="flink-item-icon">
-        <img class="no-lightbox" src="https://fomalhaut.s3.bitiful.net/favicon.ico" alt="Fomalhaut🥝" />
-      </div>
-      <div class="flink-item-name">Fomalhaut🥝</div>
-      <div class="flink-item-desc" title="Future is now 🍭🍭🍭">Future is now 🍭🍭🍭</div>
-    </a>
-  </div>
-</div>
+  .flink-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .flink-name {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .flink-desc {
+    font-size: 13px;
+    color: var(--flink-text-desc);
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* 待添加占位卡片 */
+  .flink-card.placeholder {
+    border: 1.5px dashed var(--flink-placeholder-color);
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+    color: var(--flink-placeholder-color);
+    gap: 10px;
+  }
+
+  .flink-card.placeholder:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--flink-text-desc);
+    color: var(--flink-text-desc);
+  }
+
+  .flink-plus {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--flink-icon-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .flink-placeholder-text {
+    font-size: 14px;
+    font-weight: 500;
+  }
+</style>
+
+<div class="flink-wrap">
+
+  <!-- ========== 实用工具 ========== -->
+  <div class="flink-list">
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://c.runoob.com/" title="菜鸟工具" target="_blank">
+        <div class="flink-icon">
+          <img src="https://cdn.jsdelivr.net/gh/RK1413686404/ImageShare-X/202401201015956.ico" alt="菜鸟工具" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">菜鸟工具</div>
+          <div class="flink-desc">开发设计人员工具库</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://catocr.com/" title="CatOCR" target="_blank">
+        <div class="flink-icon">
+          <img src="https://catocr.com/img/icons/favicon-32x32.png" alt="CatOCR" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">CatOCR</div>
+          <div class="flink-desc">免费在线图片转文字</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://www.ilovepdf.com/zh-cn/" title="I ❤ PDF" target="_blank">
+        <div class="flink-icon">
+          <img src="https://www.ilovepdf.com/img/ilovepdf.svg" alt="I ❤ PDF" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">I ❤ PDF</div>
+          <div class="flink-desc">完全免费的PDF处理工具</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://zhouql.vip/bilibili/" title="B站下载" target="_blank">
+        <div class="flink-icon">
+          <img src="https://zhouql.vip/bilibili/favicon.ico" alt="B站下载" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">B站下载</div>
+          <div class="flink-desc">b站视频下载工具</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://wormhole.app/" title="wormhole（虫洞）" target="_blank">
+        <div class="flink-icon">
+          <img src="https://cdn.jsdelivr.net/gh/RK1413686404/ImageShare-X/202401181648186.webp" alt="wormhole（虫洞）" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">wormhole（虫洞）</div>
+          <div class="flink-desc">简单私密的文件分享</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="http://iizuka.cs.tsukuba.ac.jp/projects/colorization/web/" title="白黒画像の自動色付" target="_blank">
+        <div class="flink-icon">
+          <img src="https://media.flaticon.com/dist/min/img/favicon.ico" alt="白黒画像の自動色付" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">白黒画像の自動色付</div>
+          <div class="flink-desc">AI 自动为黑白图像着色</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://itakeo.github.io/wx/" title="集赞不求人" target="_blank">
+        <div class="flink-icon">
+          <img src="https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png" alt="集赞不求人" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">集赞不求人</div>
+          <div class="flink-desc">朋友圈集赞200个只需1分钟</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://dazi.91xjr.com/" title="在线打字练习" target="_blank">
+        <div class="flink-icon">
+          <img src="https://dazi.91xjr.com/static/web/images/favicon.ico" alt="在线打字练习" />
+        </div>
+        <div class="flink-info">
+          <div class="flink-name">在线打字练习</div>
+          <div class="flink-desc">摆脱二指禅！</div>
+        </div>
+      </a>
+    </div>
+    <div class="flink-list-item">
+      <a class="flink-card" href="https://chat.forefront.ai/" title="Forefront AI" target="_blank">
+        <div cla
