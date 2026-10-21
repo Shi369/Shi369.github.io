@@ -46,5 +46,5 @@ document.addEventListener('DOMContentLoaded', function(){
 实战制作网页，综合运用各类方法和CSS布局，按照先构建前端盒子，从整体后局部，从上到下，从外到里的思路依次进行。  
 **Loding......
 
-# 第七天2026.8.12
-学习方向有点问题，停一停吧，这样不是个头。
+# 第十天2026.8.12
+利用碎片化时间把html和css基本熟悉了，下一步任务：掌握javascript
