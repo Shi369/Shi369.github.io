@@ -951,7 +951,7 @@ CDN:
   custom_format: https://cdn.jsdmirror.com/npm/${name}@${version}/${min_file}
 
   option:
-activate_power_mode: https://cdn.bootcdn.net/ajax/libs/butterfly-extsrc/1.1.3/activate-power-mode.min.js
+
     # abcjs_basic_js:
     # activate_power_mode:
     # algolia_js:
@@ -1007,3 +1007,4 @@ activate_power_mode: https://cdn.bootcdn.net/ajax/libs/butterfly-extsrc/1.1.3/ac
     # valine:
     # waline_css:
     # waline_js:
+activate_power_mode: https://cdn.bootcdn.net/ajax/libs/butterfly-extsrc/1.1.3/activate-power-mode.min.js
