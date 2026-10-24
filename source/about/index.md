@@ -6,6 +6,7 @@ type: about
 
 
 ## 关于本站
+ ![天津海河柳林设计公园]([https://img.watech.top/blog/8.15.1.jpg](https://img.watech.top/blog/me.jpg)
 你好，我是水车，励志成为一名全栈工程师的男人🏄🏻‍♂️，本博客用来记录个人技术踩坑笔记、生活随感、旅途碎片。
 
 ### 网站内容
