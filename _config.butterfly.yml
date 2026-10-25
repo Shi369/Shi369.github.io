@@ -272,7 +272,7 @@ busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
-  js_url: https://vercount.one/js
+  
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
@@ -959,7 +959,7 @@ CDN:
     # artalk_css:
     # artalk_js:
     # blueimp_md5:
-    # busuanzi:
+    busuanzi: https://vercount.one/js
     # canvas_fluttering_ribbon:
     # canvas_nest:
     # canvas_ribbon:
