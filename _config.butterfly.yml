@@ -272,7 +272,6 @@ busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
-  js_url: https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js
 
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
